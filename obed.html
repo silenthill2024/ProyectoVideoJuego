@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Juego de jose</title>
+</head>
+<body>
+<h2>Integrante: José Ramón</h2>
+<h1>Piedra Papel Tijera</h1>
+<button onclick="jugar('Piedra')">Piedra</button>
+<button onclick="jugar('Papel')">Papel</button>
+<button onclick="jugar('Tijera')">Tijera</button>
+<h2 id="resultado"></h2>
+<script>
+function jugar(usuario){
+    let opciones = [
+        "Piedra",
+        "Papel",
+        "Tijera"
+    ];
+    let computadora =
+    opciones[Math.floor(Math.random()*3)];
+    let mensaje =
+    "Computadora: " + computadora + "<br>";
+    if(usuario === computadora){
+        mensaje += "Empate";
+    }else if(
+        (usuario==="Piedra" && computadora==="Tijera") ||
+        (usuario==="Papel" && computadora==="Piedra") ||
+        (usuario==="Tijera" && computadora==="Papel")
+    ){
+        mensaje += "Ganaste";
+    }else{
+        mensaje += "Perdiste";
+    }
+    document.getElementById("resultado")
+    .innerHTML = mensaje;
+}
+</script>
+</body>
+</html>
