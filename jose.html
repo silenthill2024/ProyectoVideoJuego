@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Juego de José</title>
+</head>
+<body>
+<h1>Adivina el Número</h1>
+<h2>Integrantes</h2>
+<h2>Integrantes</h2>
+<p>Ingresa un número del 1 al 10</p>
+<input type="number" id="numero">
+<button onclick="verificar()">Intentar</button>
+<p id="resultado"></p>
+<script>
+let secreto = Math.floor(Math.random()*10)+1;
+function verificar(){
+    let numero =
+    parseInt(document.getElementById("numero").value);
+    if(numero === secreto){
+        document.getElementById("resultado")
+        .innerHTML = "Ganaste";
+    }else{
+        document.getElementById("resultado")
+        .innerHTML = "Intenta nuevamente";
+    }
+}
+</script>
+</body>
+</html>
