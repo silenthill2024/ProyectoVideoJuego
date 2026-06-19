@@ -1,0 +1,17 @@
+/* Estilos Base - Para ser mejorados por el Grupo Feature */
+
+body {
+    background-color: white;
+    font-family: serif;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+header {
+    border-bottom: 2px solid #333;
+    margin-bottom: 20px;
+}
+h1 {
+    color: #2c3e50;
+}
