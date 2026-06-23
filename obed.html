@@ -2,40 +2,108 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Juego de jose</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juego de Obed</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.contenedor{
+    background: white;
+    width: 450px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+}
+
+h1{
+    color: #2c3e50;
+}
+
+button{
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover{
+    background-color: #2980b9;
+}
+
+#resultado{
+    margin-top: 20px;
+    color: #27ae60;
+}
+</style>
+
 </head>
 <body>
-<h2>Integrante: José Ramón</h2>
-<h1>Piedra Papel Tijera</h1>
-<button onclick="jugar('Piedra')">Piedra</button>
-<button onclick="jugar('Papel')">Papel</button>
-<button onclick="jugar('Tijera')">Tijera</button>
+
+<div class="contenedor">
+
+<h2>Integrante: Rafael Obed Rentería Pérez</h2>
+
+<h1>Piedra, Papel o Tijera</h1>
+
+<p>Selecciona una opción para jugar contra la computadora.</p>
+
+<button onclick="jugar('Piedra')">🪨 Piedra</button>
+<button onclick="jugar('Papel')">📄 Papel</button>
+<button onclick="jugar('Tijera')">✂️ Tijera</button>
+
 <h2 id="resultado"></h2>
+
+</div>
+
 <script>
+
 function jugar(usuario){
+
     let opciones = [
         "Piedra",
         "Papel",
         "Tijera"
     ];
+
     let computadora =
     opciones[Math.floor(Math.random()*3)];
+
     let mensaje =
-    "Computadora: " + computadora + "<br>";
+    "Computadora eligió: " + computadora + "<br><br>";
+
     if(usuario === computadora){
-        mensaje += "Empate";
+
+        mensaje += "🤝 Empate";
+
     }else if(
         (usuario==="Piedra" && computadora==="Tijera") ||
         (usuario==="Papel" && computadora==="Piedra") ||
         (usuario==="Tijera" && computadora==="Papel")
     ){
-        mensaje += "Ganaste";
+
+        mensaje += "🏆 ¡Ganaste!";
+
     }else{
-        mensaje += "Perdiste";
+
+        mensaje += "❌ Perdiste";
+
     }
-    document.getElementById("resultado")
-    .innerHTML = mensaje;
+
+    document.getElementById("resultado").innerHTML = mensaje;
 }
+
 </script>
+
 </body>
 </html>
