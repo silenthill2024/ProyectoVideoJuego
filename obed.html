@@ -1,41 +1,188 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Juego de jose</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juego de José</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor{
+    width: 500px;
+    margin: 50px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+
+h1{
+    color: #2c3e50;
+}
+
+button{
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover{
+    background-color: #2980b9;
+}
+
+#resultado{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#marcador{
+    margin-top: 15px;
+    font-size: 18px;
+    color: #27ae60;
+}
+
+footer{
+    margin-top: 30px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+input[type=email]{
+    padding: 8px;
+    width: 220px;
+}
+
+.newsletter{
+    margin-top: 15px;
+}
+
+</style>
+
 </head>
 <body>
+
+<div class="contenedor">
+
 <h2>Integrante: José Ramón</h2>
+
 <h1>Piedra Papel Tijera</h1>
-<button onclick="jugar('Piedra')">Piedra</button>
-<button onclick="jugar('Papel')">Papel</button>
-<button onclick="jugar('Tijera')">Tijera</button>
+
+<p>Selecciona una opción para jugar contra la computadora.</p>
+
+<button onclick="jugar('Piedra')">🪨 Piedra</button>
+<button onclick="jugar('Papel')">📄 Papel</button>
+<button onclick="jugar('Tijera')">✂️ Tijera</button>
+
+<br><br>
+
+<button onclick="reiniciar()">🔄 Reiniciar Marcador</button>
+
 <h2 id="resultado"></h2>
+
+<div id="marcador">
+Victorias: 0
+</div>
+
+</div>
+
+<footer>
+
+<h3>Contacto</h3>
+
+<p>
+<a href="#">Facebook</a> |
+<a href="#">Instagram</a> |
+<a href="#">X</a>
+</p>
+
+<div class="newsletter">
+<h4>Suscríbete al Newsletter</h4>
+
+<input type="email" placeholder="Correo electrónico">
+<button>Suscribirse</button>
+</div>
+
+<p>&copy; 2026 Proyecto VideoJuego</p>
+
+</footer>
+
 <script>
+
+let victorias = 0;
+
 function jugar(usuario){
+
     let opciones = [
         "Piedra",
         "Papel",
         "Tijera"
     ];
+
     let computadora =
     opciones[Math.floor(Math.random()*3)];
+
     let mensaje =
-    "Computadora: " + computadora + "<br>";
+    "Computadora eligió: " + computadora + "<br>";
+
     if(usuario === computadora){
-        mensaje += "Empate";
+
+        mensaje += "🤝 Empate";
+
     }else if(
         (usuario==="Piedra" && computadora==="Tijera") ||
         (usuario==="Papel" && computadora==="Piedra") ||
         (usuario==="Tijera" && computadora==="Papel")
     ){
-        mensaje += "Ganaste";
+
+        mensaje += "🏆 Ganaste";
+        victorias++;
+
     }else{
-        mensaje += "Perdiste";
+
+        mensaje += "❌ Perdiste";
+
     }
-    document.getElementById("resultado")
-    .innerHTML = mensaje;
+
+    document.getElementById("resultado").innerHTML = mensaje;
+
+    document.getElementById("marcador").innerHTML =
+    "Victorias: " + victorias;
 }
+
+function reiniciar(){
+
+    victorias = 0;
+
+    document.getElementById("resultado").innerHTML = "";
+
+    document.getElementById("marcador").innerHTML =
+    "Victorias: 0";
+}
+
 </script>
+
 </body>
 </html>
+```

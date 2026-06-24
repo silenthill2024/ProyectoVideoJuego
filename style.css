@@ -16,3 +16,10 @@ h1 {
     color: #2c3e50;
 }
 
+.rebajado {
+    color: red;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
