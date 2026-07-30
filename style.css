@@ -1,18 +1,106 @@
-/* Estilos Base - Para ser mejorados por el Grupo Feature */
-
-body {
-    background-color: white;
-    font-family: serif;
-    color: #333;
-    margin: 0;
-    padding: 20px;
-    line-height: 1.6;
-}
-header {
-    border-bottom: 2px solid #333;
-    margin-bottom: 20px;
-}
-h1 {
-    color: #2c3e50;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
+body{
+    background:#f5f5f5;
+}
+
+header{
+    background:#1d3557;
+    color:white;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.hero{
+    text-align:center;
+    margin-top:100px;
+}
+
+.hero h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    margin-bottom:30px;
+    color:#555;
+}
+
+#btnEnviar{
+    background:#0a8836;
+    color:white;
+    border:none;
+    padding:15px 40px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+#btnEnviar:hover{
+    background:#004dcc;
+}
+
+.contenedor{
+
+    width:350px;
+    margin:80px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px rgba(0,0,0,.2);
+
+}
+
+form{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+label{
+
+    margin-top:15px;
+
+}
+
+input{
+
+    padding:10px;
+    margin-top:5px;
+
+}
+
+.btn-login,
+.btn-register{
+
+    margin-top:25px;
+    padding:12px;
+    background:#1d3557;
+    color:white;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+
+}
+
+footer{
+
+    text-align:center;
+    margin-top:80px;
+    padding:20px;
+
+}
